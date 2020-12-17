@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx
+	 http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://mybatis.org/schema/mybatis-spring
+    http://mybatis.org/schema/mybatis-spring.xsd
+">
+
+
+    <!--导入连接数据库文件jdbc.properties 配置文件中需要些classpath-->
+    <context:property-placeholder location="classpath:mybatis/jdbc.properties"/>
+
+    <!--配置数据源:dataSource-->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${jdbc_driver}"/>
+        <property name="url" value="${jdbc_url}"/>
+        <property name="username" value="${jdbc_user}"/>
+        <property name="password" value="${jdbc_password}"/>
+    </bean>
+
+    <!--配置sqlSessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--导入SqlMapConfig.xml文件:就是为了打印sql,这种方式控制台很干净-->
+        <property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml"/>
+        <!--引入数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--给实体类指定别名-->
+        <property name="typeAliasesPackage" value="com.powernode.crm.settings.bean"/>
+        <!--扫描映射文件-->
+        <!--<property name="mapperLocations" value="classpath:mappers/*.xml" />-->
+        <!--分页插件:PageHelper-->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageHelper">
+                    <property name="properties">
+                        <props>
+                            <!--dialect:数据库方言-->
+                            <prop key="dialect">mysql</prop>
+                            <prop key="supportMethodsArguments">true</prop>
+                        </props>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    </bean>
+
+    <!--扫描mapper接口
+    tk.mybatis.spring.mapper.MapperScannerConfigurer:技能使用tkMapper，又能使用原始方式
+    org.mybatis.spring.mapper.MapperScannerConfigurer:只能使用方式-->
+     <!--<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+         <property name="basePackage"
+                   value="com.powernode.crm.settings.mapper"/>
+         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+     </bean>
+    <mybatis:scan base-package="com.powernode.crm.settings.mapper"/>-->
+</beans>

@@ -1,0 +1,36 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="CRMM:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/CRMM_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="CRMM" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.annotation:javax.annotation-api:1.3.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.6.8" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.6" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:2.0.3" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.36" />
+          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.4" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.3" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:4.1.6" />
+          <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:0.9.5" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="CRMM/web/Web" />
+    </root>
+  </artifact>
+</component>
