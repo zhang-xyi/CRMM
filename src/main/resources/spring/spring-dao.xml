@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:tx="http://www.springframework.org/schema/tx"
-
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+           xmlns:aop="http://www.springframework.org/schema/aop"
+           xmlns:context="http://www.springframework.org/schema/context"
+           xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mybatic="http://www.springframework.org/schema/context"
+           xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
 	 http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/tx
-	 http://www.springframework.org/schema/tx/spring-tx.xsd
-    http://mybatis.org/schema/mybatis-spring
-    http://mybatis.org/schema/mybatis-spring.xsd
-">
-
+	 http://www.springframework.org/schema/tx/spring-tx.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
 
     <!--导入连接数据库文件jdbc.properties 配置文件中需要些classpath-->
     <context:property-placeholder location="classpath:mybatis/jdbc.properties"/>
@@ -56,12 +52,17 @@
     </bean>
 
     <!--扫描mapper接口
-    tk.mybatis.spring.mapper.MapperScannerConfigurer:技能使用tkMapper，又能使用原始方式
-    org.mybatis.spring.mapper.MapperScannerConfigurer:只能使用方式-->
-     <!--<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+    tk.mybatis.spring.dao.MapperScannerConfigurer:技能使用tkMapper，又能使用原始方式
+    org.mybatis.spring.dao.MapperScannerConfigurer:只能使用方式
+     <bean class="tk.mybatis.spring.dao.MapperScannerConfigurer">
          <property name="basePackage"
-                   value="com.powernode.crm.settings.mapper"/>
+                   value="com.powernode.crm.settings.dao
          <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-     </bean>
-    <mybatis:scan base-package="com.powernode.crm.settings.mapper"/>-->
+     </bean>-->
+
+
+    <!--扫描扫描mapper接口-->
+    <mybatis:scan base-package="com.powernode.crm.settings.dao"/>
+
+
 </beans>

@@ -154,23 +154,4 @@ public class User implements Serializable {
     public void setEditby(String editby) {
         this.editby = editby;
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", loginact='" + loginact + '\'' +
-                ", name='" + name + '\'' +
-                ", loginpwd='" + loginpwd + '\'' +
-                ", email='" + email + '\'' +
-                ", expiretime='" + expiretime + '\'' +
-                ", lockstate='" + lockstate + '\'' +
-                ", deptno='" + deptno + '\'' +
-                ", allowips='" + allowips + '\'' +
-                ", createtime='" + createtime + '\'' +
-                ", createby='" + createby + '\'' +
-                ", edittime='" + edittime + '\'' +
-                ", editby='" + editby + '\'' +
-                '}';
-    }
 }

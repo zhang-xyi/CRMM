@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.powernode.crm.settings.mapper.UserDao">
+<mapper namespace="com.powernode.crm.settings.dao.UserDao">
   <resultMap id="BaseResultMap" type="com.powernode.crm.settings.bean.User">
     <id column="id" jdbcType="CHAR" property="id" />
     <result column="loginAct" jdbcType="VARCHAR" property="loginact" />
@@ -30,6 +30,7 @@
     select
     <include refid="Base_Column_List" />
     from tbl_user
+    where id = #{id,jdbcType=CHAR}
   </select>
   <select id="selectOneByNameAndPwd"  resultMap="BaseResultMap">
     select

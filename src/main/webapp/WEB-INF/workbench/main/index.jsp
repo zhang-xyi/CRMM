@@ -1,3 +1,4 @@
+<%@page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,6 @@
 
 </head>
 <body>
-	<img src="../../image/home.png" style="position: relative;top: -10px; left: -10px;"/>
+	<img src="/crm/image/home.png" style="position: relative;top: -10px; left: -10px;"/>
 </body>
 </html>

@@ -12,7 +12,11 @@ package com.powernode.crm.base.constants;
  */
 public enum CrmExceptionEnum {
 
-    LOGIN_ACCOUNT_EXCEPTION("001", "用户名或密码错误");
+    LOGIN_ACCOUNT_EXCEPTION("001", "用户名或密码错误"),
+    LOGIN_EXPIRE_EXCEPTION("002","账户已失效"),
+    LOGIN_LOCK_EXCEPTION("003","账户已锁定"),
+    LOGIN_IP_EXCEPTION("004","不允许的IP地址"),
+    ;
 
 
     //业务状态码

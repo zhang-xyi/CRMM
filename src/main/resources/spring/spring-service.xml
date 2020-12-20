@@ -22,7 +22,8 @@
     </bean>
     <!--aop配置-->
     <aop:config>
-        <aop:pointcut id="pointcut" expression="execution(* com.powernode.crm..service.*.*(..))" />
+        <aop:pointcut id="pointcut" expression="execution(*
+        com.powernode.crm..service.*.*(..))" />
         <aop:advisor advice-ref="trAdvice" pointcut-ref="pointcut" />
     </aop:config>
 

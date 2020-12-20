@@ -1,4 +1,4 @@
-package com.powernode.crm.settings.mapper;
+package com.powernode.crm.settings.dao;
 
 import com.powernode.crm.settings.bean.User;
 

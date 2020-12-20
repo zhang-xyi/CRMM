@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="/CRMM/jquery/bootstrap_3.3.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="jquery/bootstrap_3.3.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="/CRMM/jquery/jquery-1.11.1-min.js"></script>
 <script type="text/javascript" src="/CRMM/jquery/bootstrap_3.3.0/js/bootstrap.min.js"></script>
 </head>
@@ -20,17 +20,17 @@
 			<div class="page-header">
 				<h1>登录</h1>
 			</div>
-			<form action="WEB-INF/workbench/index.html" class="form-horizontal" role="form">
+			<form action="/crm/login" class="form-horizontal" role="form">
 				<div class="form-group form-group-lg">
 					<div style="width: 350px;">
-						<input class="form-control" type="text" name="loginact" placeholder="用户名">
+						<input class="form-control" type="text" name="loginact" value="${loginact}" placeholder="用户名">
 					</div>
 					<div style="width: 350px; position: relative;top: 20px;">
 						<input class="form-control" type="password" name="loginpwd" placeholder="密码">
 					</div>
 					<div class="checkbox"  style="position: relative;top: 30px; left: 10px;">
 						
-							<span id="msg"></span>
+							<span id="msg" style="color: red">${mess}</span>
 						
 					</div>
 					<button type="submit" class="btn btn-primary btn-lg btn-block"  style="width: 350px; position: relative;top: 45px;">登录</button>

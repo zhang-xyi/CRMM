@@ -9,7 +9,7 @@
               <option name="comment" value="true" />
               <option name="daoMvnPath" value="src/main/java" />
               <option name="daoName" value="UserDao" />
-              <option name="daoPackage" value="com.powernode.crm.settings.mapper" />
+              <option name="daoPackage" value="com.powernode.crm.settings.dao" />
               <option name="daoPostfix" value="Dao" />
               <option name="modelMvnPath" value="src/main/java" />
               <option name="modelName" value="User" />
@@ -22,7 +22,7 @@
               <option name="tableName" value="tbl_user" />
               <option name="useSchemaPrefix" value="true" />
               <option name="xmlMvnPath" value="src/main/java" />
-              <option name="xmlPackage" value="com.powernode.crm.settings.mapper" />
+              <option name="xmlPackage" value="com.powernode.crm.settings.dao" />
             </Config>
           </value>
         </entry>
